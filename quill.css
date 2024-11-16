@@ -1,0 +1,411 @@
+body {
+background-color: #FFFFFF;
+}
+#container {
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+}
+
+header {
+margin-top: 10px;
+margin-bottom: 20px;
+background-color: #FFFFFF;
+border-radius: 5px;
+text-align: center;
+max-width: 50%;
+
+}
+
+header img {
+  width: 50%; /* Adjust the percentage to make the logo smaller */
+  margin: 0 auto;
+  display: block; /* This will center the image */
+}
+
+nav {
+font-family: Verdana, "Arial", sans-serif;
+font-size: 1.25em;
+font-weight: bold;
+text-align: center;
+padding: 15px;
+margin-top: 10px;
+margin-bottom: 10px;
+border-radius: 20px;
+border-top: 5px solid #FFFFFF;
+border-bottom: 5px solid #FFFFFF;
+
+}
+
+/*Dropdown navigation*/
+
+.navbar {
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+.navbar a {
+  float: left;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1em; 
+  font-weight: bold; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: blue;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  color: white;
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+ul {
+ list-style-type: none
+}
+
+
+
+main {
+display: block;
+font-family: Verdana, Arial, sans-serif;
+font-size: 1em;
+margin-top: 20px;
+margin-bottom: 10px;
+padding: 20px;
+border-radius: 10px;
+background-color: #FFFFFF;
+}
+
+
+h1 {
+text-align: center;
+}
+
+h2 {
+text-align: center;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 5px solid black;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+/*Book container for excerpt page*/
+
+
+#book-container {
+    width: 60%;
+    text-align: justify;
+    padding: 40px;
+    margin:40px;
+    border: 3px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+#page-content {
+    min-height: 200px;
+}
+button {
+    margin-top: 20px;
+}
+
+
+
+
+footer {
+display: block;
+font-family: Verdana, Arial, sans-serif;
+font-size: 1em;
+color:white;
+text-align: center;
+margin: 20px auto 10px auto; 
+padding: 20px;
+border-radius: 10px;
+background-color: lightblue;
+width:80%;
+}
+
+
+.fancyline {
+border-top: 5px solid white;
+}
+
+ul.breadcrumb {
+padding: 10px 16px;
+list-style: none;
+background-color: #FFFF99;
+}
+ul.breadcrumb li {
+display: inline;
+font-size: 1em;
+}
+ul.breadcrumb li+li:before {
+padding: 3px;
+color: black;
+content: "\003e";
+}
+ul.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+
+#book {
+border:1px solid black;
+padding: 10px;
+}
+
+#description {
+padding:4px 30px 4px 30px;
+}
+
+#bookimage {
+float: left;
+margin:20px;
+border-radius: 3px;
+box-shadow: 12px 12px 12px grey;       
+ }
+
+
+#bookimageright {
+float: right;
+margin:10px;
+border-radius: 3px;
+box-shadow: 12px 12px 12px grey;       
+ }
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+button {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: deepskyblue;
+}
+
+
+
+
+
+@media only screen and (min-width: 900px) {
+    #container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      text-align: center;
+    }
+    nav ul {
+        list-style: none;
+        font-family: Verdana, "Arial", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }		
+
+nav li {
+    display: inline;
+    text-decoration: none;
+}
+nav li a {
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: Verdana, Arial, sans-serif;
+    background-color: lightblue;
+    color: white;
+    width: 130px;
+}
+
+nav a:hover {
+    color: white;
+    background-color: white;
+}
+main {
+      display: block;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 1em;
+      margin-top: 20px;
+      margin-bottom: 200px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #FFFFFF;
+}
+
+/* Style for the post container */
+.post {
+  border: 2px solid #a3c8f5; /* Light Blue Border */
+  background-color: #e6f3ff; /* Light Blue Background */
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Post header styling */
+.post-header {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Time display for the post */
+.post-time {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Comment button */
+.comment-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.comment-button:hover {
+  background-color: #45a049;
+}
+
+/* Styling for comment form */
+.comment-form {
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Styling for individual comments */
+.comment {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.comment strong {
+  font-weight: bold;
+}
+
+/* Styling for the post form */
+#postFormContainer {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#postFormContainer input,
+#postFormContainer textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#postFormContainer button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+#postFormContainer button:hover {
+  background-color: #45a049;
+}
+
+#posts {
+  margin-top: 20px;
+}

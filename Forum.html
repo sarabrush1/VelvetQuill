@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<title>Books</title>
+<link rel="stylesheet" type="text/css" href="file:///Users/saraweidner/Downloads/Draft2/VelvetQuill-SHARED/css/quill.css">
+
+</head>
+<body>
+
+<div id="container">
+<header><img src="file:///Users/saraweidner/Downloads/Draft2/VelvetQuill-SHARED/images/logo.png" alt="Site Logo"> </header>
+
+
+
+<nav>
+<div class="navbar">
+ <a href="home.html">Home</a>
+
+<div class="dropdown">
+  <button class="dropbtn">About 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="About.html">About</a>
+      <a href="AboutTeam.html">Team</a>
+      <a href="AboutAuthors">Authors</a> 
+    </div> 
+</div>
+  <div class="dropdown">
+    <button class="dropbtn">Books 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="BooksNewReleases.html">New Releases</a>
+      <a href="BooksFantasy.html">Fantasy</a>
+      <a href="BooksRomance.html">Romance</a>
+      <a href="BooksHorrorThriller.html">Horror & Thriller</a>
+      <a href="BookNonfiction.html">Nonfiction</a>
+   </div>
+  </div> 
+
+  <a href="#home">Events</a>
+  <a href="#home">Blog</a>
+
+
+  <div class="dropdown">
+    <button class="dropbtn">Contact 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Contact.html">Contact</a>
+      <a href="SignUp.html">Subscribe</a>
+   </div>
+  </div> 
+</div>
+</div>
+</nav>
+
+<body>
+  <h1>Community Blog</h1>
+  <h2>Interact with other book lovers, authors and staff about upcoming books, questions you have about things you have read, or just finding like minded people!</h2>
+
+  <!-- Create New Post Button -->
+  <button id="createPostButton">Create a New Post</button>
+
+  <!-- Post Form (Initially Hidden) -->
+  <div id="postFormContainer" style="display:none;">
+    <form id="postForm">
+      <label for="postAuthor">Name:</label><br>
+      <input type="text" id="postAuthor" required><br>
+      <label for="postContent">Write a post:</label><br>
+      <textarea id="postContent" rows="4" cols="50" required></textarea><br>
+      <button type="submit">Post</button>
+    </form>
+  </div>
+
+  <div id="posts">
+    <h2>Posts:</h2>
+  </div>
+
+  <script>
+    // Show or hide the post form when the button is clicked
+    document.getElementById('createPostButton').addEventListener('click', function() {
+      const postFormContainer = document.getElementById('postFormContainer');
+      if (postFormContainer.style.display === 'none') {
+        postFormContainer.style.display = 'block';  // Show the form
+      } else {
+        postFormContainer.style.display = 'none';  // Hide the form
+      }
+    });
+
+    document.getElementById('postForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const author = document.getElementById('postAuthor').value.trim();
+      const content = document.getElementById('postContent').value.trim();
+
+      if (author && content) {
+        addPost(author, content);
+        document.getElementById('postAuthor').value = ''; // Clear input
+        document.getElementById('postContent').value = '';
+        document.getElementById('postFormContainer').style.display = 'none'; // Hide form after posting
+      }
+    });
+
+    function addPost(author, content) {
+      const postContainer = document.createElement('div');
+      postContainer.classList.add('post');
+
+      const postHeader = document.createElement('div');
+      postHeader.classList.add('post-header');
+      postHeader.textContent = `${author} posted:`;
+
+      const postTime = document.createElement('div');
+      postTime.classList.add('post-time');
+      const currentTime = new Date();
+      postTime.textContent = `Posted on: ${currentTime.toLocaleString()}`;
+
+      const postContent = document.createElement('div');
+      postContent.textContent = content;
+
+      const commentButton = document.createElement('button');
+      commentButton.textContent = 'Comment on this post';
+      commentButton.classList.add('comment-button');
+
+      // When the comment button is clicked, show comment form
+      commentButton.addEventListener('click', function() {
+        const commentForm = document.createElement('form');
+        commentForm.classList.add('comment-form');
+        commentForm.innerHTML = `
+          <input type="text" class="comment-author" placeholder="Your name" required>
+          <textarea class="comment-content" placeholder="Write a comment" rows="2" required></textarea>
+          <button type="submit">Submit Comment</button>
+        `;
+
+        // Handle comment submission
+        commentForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const commentAuthor = commentForm.querySelector('.comment-author').value.trim();
+          const commentContent = commentForm.querySelector('.comment-content').value.trim();
+
+          if (commentAuthor && commentContent) {
+            addComment(postContainer, commentAuthor, commentContent);
+            commentForm.querySelector('.comment-author').value = '';
+            commentForm.querySelector('.comment-content').value = '';
+          }
+        });
+
+        postContainer.appendChild(commentForm);  // Append the comment form under the post
+      });
+
+      postContainer.appendChild(postHeader);
+      postContainer.appendChild(postTime);
+      postContainer.appendChild(postContent);
+      postContainer.appendChild(commentButton);
+
+      document.getElementById('posts').appendChild(postContainer);
+    }
+
+    function addComment(postContainer, author, content) {
+      const commentContainer = document.createElement('div');
+      commentContainer.classList.add('comment');
+      commentContainer.innerHTML = `<strong>${author}:</strong> ${content}`;
+      postContainer.appendChild(commentContainer);
+    }
+  </script>
+</body>
+</html>
